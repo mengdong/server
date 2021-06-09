@@ -85,7 +85,7 @@ class DynamicBatchScheduler : public Scheduler {
       const inference::ModelQueuePolicy& default_queue_policy,
       const uint32_t priority_levels,
       const ModelQueuePolicyMap& queue_policy_map);
-  void SchedulerThread(const int nice, std::promise<bool>* is_initialized);
+  void BatcherThread(const int nice);
   uint64_t GetDynamicBatch();
   void FinalizeResponses();
 
